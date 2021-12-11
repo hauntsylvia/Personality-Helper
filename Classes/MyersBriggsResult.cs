@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myers_briggs_helper.Classes
+namespace personality_helper.Classes
 {
     public class MyersBriggsResult
     {

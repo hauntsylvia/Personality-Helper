@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myers_briggs_helper.Classes.Extended
+namespace personality_helper.Classes.Extended
 {
     public class Judging : IMBTICharacter
     {

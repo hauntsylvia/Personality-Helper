@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myers_briggs_helper.Classes
+namespace personality_helper.Classes
 {
     public interface IMBTICharacter
     {

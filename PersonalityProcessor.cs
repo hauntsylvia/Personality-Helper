@@ -1,8 +1,8 @@
-﻿using myers_briggs_helper.Classes;
+﻿using personality_helper.Classes;
 
-namespace myers_briggs_helper
+namespace personality_helper
 {
-    public class Processor
+    public class PersonalityProcessor
     {
         public static MyersBriggsResult From(string type)
         {
