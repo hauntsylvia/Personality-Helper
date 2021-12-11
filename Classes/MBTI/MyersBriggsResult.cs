@@ -1,4 +1,6 @@
-﻿using System;
+﻿using personality_helper.Classes.Functions;
+using personality_helper.Classes.Grips;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,16 +11,15 @@ namespace personality_helper.Classes
 {
     public class MyersBriggsResult
     {
-        public MyersBriggsResult(string type)
+        public MyersBriggsResult(string name)
         {
-            type = type.ToUpper();
-            char ei = type[0];
-            char sn = type[1];
-            char tf = type[2];
-            char jp = type[3];
+            name = name.ToUpper();
+            char ei = name[0];
+            char sn = name[1];
+            char tf = name[2];
+            char jp = name[3];
             if (!((ei == 'E' || ei == 'I') && (sn == 'S' || sn == 'N') && (tf == 'T' || tf == 'F') && (jp == 'J' || jp == 'P')))
                 throw new ArgumentException("Invalid myers briggs type format.");
-            _name = new string(new char[] { ei, sn, tf, jp });
 
             List<IMBTICharacter> allMBTICharacters = new();
             foreach (Type t in Assembly.GetExecutingAssembly().GetTypes())
@@ -33,12 +34,22 @@ namespace personality_helper.Classes
             characters[1] = allMBTICharacters.First(x => x.letter == sn);
             characters[2] = allMBTICharacters.First(x => x.letter == tf);
             characters[3] = allMBTICharacters.First(x => x.letter == jp);
-            _type = characters;
 
+            this._types = characters;
+            this._name = new string(new char[] { ei, sn, tf, jp });
+            this._functions = new FunctionResult(this._name);
         }
         private readonly string _name;
         public string name => _name;
-        private readonly IMBTICharacter[] _type;
-        public IMBTICharacter[] type => _type;
+        private readonly IMBTICharacter[] _types;
+        public IMBTICharacter[] types => _types;
+
+        private readonly FunctionResult _functions;
+        public FunctionResult functions => _functions;
+
+        public override string ToString()
+        {
+            return this.name.ToUpper();
+        }
     }
 }
