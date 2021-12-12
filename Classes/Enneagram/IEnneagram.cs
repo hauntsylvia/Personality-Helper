@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace personality_helper.Classes.Enneagram
 {
-    internal interface IEnneagram
+    public enum EnneagramCategorization
     {
+        Body,
+        Heart,
+        Head
+    }
+    public interface IEnneagram
+    {
+        EnneagramCategorization category { get; }
+        int representativeNumber { get; }
     }
 }

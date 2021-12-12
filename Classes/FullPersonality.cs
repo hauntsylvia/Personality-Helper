@@ -13,6 +13,6 @@ namespace personality_helper.Classes
             this._mbti = mbti;
         }
         private MyersBriggsResult _mbti;
-        public MyersBriggsResult mbti { get => _mbti; set => _mbti = value ?? throw new ArgumentNullException("MBTI can not be null."); }
+        public MyersBriggsResult mbti { get => _mbti; set => _mbti = value ?? throw new ArgumentNullException(nameof(value)); }
     }
 }
