@@ -12,9 +12,4 @@ namespace personality_helper.Classes.Enneagram
         Heart,
         Head
     }
-    public interface IEnneagram
-    {
-        EnneagramCategorization category { get; }
-        int representativeNumber { get; }
-    }
 }
