@@ -17,9 +17,9 @@ namespace personality_helper.Classes.Enneagram
             this._wingType = wing;
         }
         private readonly IEnneagram _dominantType;
-        public IEnneagram dominantType { get => _dominantType; }
+        public IEnneagram dominantType { get => this._dominantType; }
         private readonly IEnneagram _wingType;
-        public IEnneagram wingType { get => _wingType; }
+        public IEnneagram wingType { get => this._wingType; }
 
     }
 }

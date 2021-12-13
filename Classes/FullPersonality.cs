@@ -15,9 +15,9 @@ namespace personality_helper.Classes
             this._enneagram = enneagram;
         }
         private MyersBriggsResult _mbti;
-        public MyersBriggsResult mbti { get => _mbti; set => _mbti = value ?? throw new ArgumentNullException(nameof(value)); }
+        public MyersBriggsResult mbti { get => this._mbti; set => this._mbti = value ?? throw new ArgumentNullException(nameof(value)); }
 
         private EnneagramResult _enneagram;
-        public EnneagramResult enneagram { get => _enneagram; set => _enneagram = value ?? throw new ArgumentNullException(nameof(value)); }
+        public EnneagramResult enneagram { get => this._enneagram; set => this._enneagram = value ?? throw new ArgumentNullException(nameof(value)); }
     }
 }

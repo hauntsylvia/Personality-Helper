@@ -31,27 +31,27 @@ namespace personality_helper.Classes.Functions
         };
         public FunctionResult(string t)
         {
-            IFunction[] functions   = typeToFunctions[t];
+            IFunction[] functions = typeToFunctions[t];
 
-            this._dominantFunction  = functions[0];
-            this._auxFunction       = functions[1];
-            this._tertiaryFunction  = functions[2];
-            this._inferiorFunction  = functions[3];
+            this._dominantFunction = functions[0];
+            this._auxFunction = functions[1];
+            this._tertiaryFunction = functions[2];
+            this._inferiorFunction = functions[3];
         }
         public FunctionResult()
-        { 
+        {
         }
 
         private readonly IFunction _dominantFunction;
-        public IFunction dominantFunction => _dominantFunction;
+        public IFunction dominantFunction => this._dominantFunction;
 
         private readonly IFunction _auxFunction;
-        public IFunction auxFunction => _auxFunction;
+        public IFunction auxFunction => this._auxFunction;
 
         private readonly IFunction _tertiaryFunction;
-        public IFunction tertiaryFunction => _tertiaryFunction;
+        public IFunction tertiaryFunction => this._tertiaryFunction;
 
         private readonly IFunction _inferiorFunction;
-        public IFunction inferiorFunction => _inferiorFunction;
+        public IFunction inferiorFunction => this._inferiorFunction;
     }
 }

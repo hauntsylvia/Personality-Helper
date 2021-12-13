@@ -26,7 +26,7 @@ namespace personality_helper.Classes
                 if (t.GetInterfaces().Contains(typeof(IMBTICharacter)))
                 {
                     object? instance = Activator.CreateInstance(t);
-                    if(instance != null)
+                    if (instance != null)
                         allMBTICharacters.Add((IMBTICharacter)instance);
                 }
             IMBTICharacter[] characters = new IMBTICharacter[4];
@@ -40,12 +40,12 @@ namespace personality_helper.Classes
             this._functions = new FunctionResult(this._name);
         }
         private readonly string _name;
-        public string name => _name;
+        public string name => this._name;
         private readonly IMBTICharacter[] _types;
-        public IMBTICharacter[] types => _types;
+        public IMBTICharacter[] types => this._types;
 
         private readonly FunctionResult _functions;
-        public FunctionResult functions => _functions;
+        public FunctionResult functions => this._functions;
 
         public override string ToString()
         {
