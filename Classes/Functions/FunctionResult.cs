@@ -1,4 +1,5 @@
-﻿using personality_helper.Classes.Functions.Extended;
+﻿using Newtonsoft.Json;
+using personality_helper.Classes.Functions.Extended;
 using personality_helper.Classes.Grips;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,14 @@ namespace personality_helper.Classes.Functions
             { "ESTP", new IFunction[] { new Se(), new Ti(), new Fe(), new Ni() } },
             { "ESFP", new IFunction[] { new Se(), new Fi(), new Te(), new Ni() } },
         };
+        [JsonConstructor]
+        public FunctionResult(IFunction dominantFunction, IFunction auxFunction, IFunction tertiaryFunction, IFunction inferiorFunction)
+        {
+            this._dominantFunction = dominantFunction;
+            this._auxFunction = auxFunction;
+            this._tertiaryFunction = tertiaryFunction;
+            this._inferiorFunction = inferiorFunction;
+        }
         public FunctionResult(string t)
         {
             IFunction[] functions = typeToFunctions[t];
@@ -38,9 +47,6 @@ namespace personality_helper.Classes.Functions
             this._tertiaryFunction = functions[2];
             this._inferiorFunction = functions[3];
         }
-        //public FunctionResult()
-        //{
-        //}
 
         private readonly IFunction _dominantFunction;
         public IFunction dominantFunction => this._dominantFunction;
