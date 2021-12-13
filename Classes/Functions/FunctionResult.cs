@@ -38,9 +38,9 @@ namespace personality_helper.Classes.Functions
             this._tertiaryFunction = functions[2];
             this._inferiorFunction = functions[3];
         }
-        public FunctionResult()
-        {
-        }
+        //public FunctionResult()
+        //{
+        //}
 
         private readonly IFunction _dominantFunction;
         public IFunction dominantFunction => this._dominantFunction;
