@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace personality_helper.Classes
+namespace personality_helper.Classes.MBTI
 {
     public interface IMBTICharacter
     {

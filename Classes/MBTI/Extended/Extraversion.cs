@@ -1,4 +1,5 @@
-﻿using System;
+﻿using personality_helper.Classes.MBTI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

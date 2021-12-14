@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace personality_helper.Classes
+namespace personality_helper.Classes.MBTI
 {
     public class MyersBriggsResult
     {
@@ -47,6 +47,7 @@ namespace personality_helper.Classes
         private readonly FunctionResult _functions;
         public FunctionResult functions => this._functions;
 
+        public static explicit operator MyersBriggsResult(string t) => new(t);
         public override string ToString()
         {
             return this.name.ToUpper();

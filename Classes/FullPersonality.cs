@@ -1,4 +1,5 @@
 ﻿using personality_helper.Classes.Enneagram;
+using personality_helper.Classes.MBTI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,6 @@ namespace personality_helper.Classes
 
         private Enneagram.Enneagram _enneagram;
         public Enneagram.Enneagram enneagram { get => this._enneagram; set => this._enneagram = value; }
+
     }
 }

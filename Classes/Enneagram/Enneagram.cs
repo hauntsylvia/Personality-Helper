@@ -25,6 +25,8 @@ namespace personality_helper.Classes.Enneagram
         private readonly int _wingType = -1;
         public int wingType { get => this._wingType; }
 
+        public static explicit operator Enneagram(string wing) => new(int.Parse(wing.Split('w')[0]), int.Parse(wing.Split('w')[1]));
+
         public override string ToString()
         {
             if (this.dominantType != -1 && this.wingType != -1)
