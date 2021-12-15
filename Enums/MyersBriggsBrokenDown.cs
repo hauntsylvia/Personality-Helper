@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace myers_briggs_helper.Enums
+namespace personality_helper.Enums
 {
     public class MyersBriggsBrokenDown
     {

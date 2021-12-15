@@ -21,5 +21,14 @@ namespace personality_helper.Classes
         private Enneagram.Enneagram _enneagram;
         public Enneagram.Enneagram enneagram { get => this._enneagram; set => this._enneagram = value; }
 
+        public override string ToString()
+        {
+            return $"━━━━━━━━━✁━━━━━━━━━" +
+                    $"\n" +
+                    $"{(this.mbti == null || this.mbti.isInvalid ? "XXXX" : this.mbti)} {(this.enneagram == null || this.enneagram.isInvalid ? "xwx" : this.enneagram)}" +
+                    $"\n" +
+                    $"{(this.mbti == null || this.mbti.isInvalid ? "(no valid functions)" : $"{this.mbti.functions.dominantFunction.name}→{this.mbti.functions.auxFunction.name}→{this.mbti.functions.tertiaryFunction.name}→{this.mbti.functions.inferiorFunction.name}")}" +
+                    $"\n━━━━━━━━━✁━━━━━━━━━";
+        }
     }
 }
