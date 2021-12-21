@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace personality_helper.Classes.Extended
+namespace personality_helper.Classes.MBTI.Extended
 {
     public class Judging : IMBTICharacter
     {

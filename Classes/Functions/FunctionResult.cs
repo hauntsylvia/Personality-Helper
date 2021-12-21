@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using personality_helper.Classes.Functions.Extended;
-using personality_helper.Classes.Grips;
 using System;
 using System.Collections.Generic;
 using System.Linq;
