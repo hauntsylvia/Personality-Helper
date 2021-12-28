@@ -16,11 +16,11 @@ namespace personality_helper.Classes.Enneagram
             int magnitude = Math.Abs(dominantType - wingType);
             try
             {
-                if ((magnitude > 1) && !((dominantType == 1 && wingType == 9) || dominantType == 9 && wingType == 1) && !forceType)
+                if ((magnitude > 1) && !((dominantType == 1 && wingType == 9) || (dominantType == 9 && wingType == 1)) && !forceType)
                     throw new ArgumentException($"{nameof(wingType)} can not be more than 1 step away from {nameof(dominantType)}", nameof(wingType));
-                if (dominantType > 9 || dominantType < 1 && !forceType)
+                if (dominantType > 9 || (dominantType < 1 && !forceType))
                     throw new ArgumentOutOfRangeException(nameof(dominantType));
-                if (wingType > 9 || wingType < 1 && !forceType)
+                if (wingType > 9 || (wingType < 1 && !forceType))
                     throw new ArgumentOutOfRangeException(nameof(wingType));
                 this._dominantType = dominantType;
                 this._wingType = wingType;
