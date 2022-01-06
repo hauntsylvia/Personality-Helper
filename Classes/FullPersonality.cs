@@ -10,16 +10,16 @@ namespace personality_helper.Classes
 {
     public class FullPersonality
     {
-        public FullPersonality(MyersBriggsResult mbti, Enneagram.Enneagram enneagram)
+        public FullPersonality(MyersBriggsResult? mbti, Enneagram.Enneagram? enneagram)
         {
             this._mbti = mbti;
             this._enneagram = enneagram;
         }
-        private MyersBriggsResult _mbti;
-        public MyersBriggsResult mbti { get => this._mbti; set => this._mbti = value; }
+        private MyersBriggsResult? _mbti;
+        public MyersBriggsResult? mbti { get => this._mbti; set => this._mbti = value; }
 
-        private Enneagram.Enneagram _enneagram;
-        public Enneagram.Enneagram enneagram { get => this._enneagram; set => this._enneagram = value; }
+        private Enneagram.Enneagram? _enneagram;
+        public Enneagram.Enneagram? enneagram { get => this._enneagram; set => this._enneagram = value; }
 
         public override string ToString()
         {
