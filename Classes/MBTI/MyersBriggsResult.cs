@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace personality_helper.Classes.MBTI
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class MyersBriggsResult : IValidation
     {
         [JsonConstructor]
@@ -29,36 +30,35 @@ namespace personality_helper.Classes.MBTI
             this._name = new string(new char[] { ei, sn, tf, jp });
             if (!this.isInvalid)
             {
-                List<IMBTICharacter> allMBTICharacters = new();
-                foreach (Type t in Assembly.GetExecutingAssembly().GetTypes())
-                    if (t.GetInterfaces().Contains(typeof(IMBTICharacter)))
-                    {
-                        object? instance = Activator.CreateInstance(t);
-                        if (instance != null)
-                            allMBTICharacters.Add((IMBTICharacter)instance);
-                    }
-                IMBTICharacter[] characters = new IMBTICharacter[4];
-                characters[0] = allMBTICharacters.First(x => x.letter == ei);
-                characters[1] = allMBTICharacters.First(x => x.letter == sn);
-                characters[2] = allMBTICharacters.First(x => x.letter == tf);
-                characters[3] = allMBTICharacters.First(x => x.letter == jp);
-
+                MBTICharacter[] characters = new MBTICharacter[4];
+                for (int i = 0; i < characters.Length; i++)
+                    characters[i] = new(name[i]);
                 this._types = characters;
                 this._functions = new FunctionResult(this._name);
             }
         }
+
+
+        [JsonProperty("name")]
         private readonly string _name;
         public string name => this._name;
-        private readonly IMBTICharacter[]? _types;
-        public IMBTICharacter[] types => this._types ?? throw new ArgumentNullException(nameof(this._name), "This result was forced, with no matching broken down characters.");
+
+
+        private readonly MBTICharacter[]? _types;
+        public MBTICharacter[] types => this._types ?? throw new ArgumentNullException(nameof(this._name), "This result was forced, with no matching broken down characters.");
+
 
         private readonly FunctionResult? _functions;
         public FunctionResult functions => this._functions ?? throw new ArgumentNullException(nameof(this._name), "This result was forced, with no matching functions.");
 
+
         private readonly bool _isInvalid;
         public bool isInvalid => _isInvalid;
 
+
         public static explicit operator MyersBriggsResult(string t) => new(t);
+
+
         public override string ToString()
         {
             return this.name.ToUpper();
